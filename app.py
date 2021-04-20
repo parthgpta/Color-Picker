@@ -23,7 +23,7 @@ def mask_border() -> str:                                                      #
     
     w ,h = int(img.shape[0]) , int(img.shape[1])
     min_ori = min(w,h)
-    bw = round(0.03 * min_ori)                                                 # Width of border in pixels to masked
+    bw = round(0.03 * min_ori)                                                 # Width of border in pixels to be masked
     mask = np.ones(img.shape[:2], dtype = "uint8")
     cv2.rectangle(mask, (bw,bw),(img.shape[1]-bw,img.shape[0]-bw), 0, -1)
     output = cv2.bitwise_and(img, img, mask = mask)
